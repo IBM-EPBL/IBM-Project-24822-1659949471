@@ -1,0 +1,80 @@
+ 
+       Basic Python
+       1. Split this string 
+
+ In [1]:s = "Hi there Sam!"
+ In [2]:s.split()
+        ['Hi', 'there', 'Sam!']
+       2. Use .format() to print the following string.
+         Output should be: The diameter of Earth is 12742   
+         kilometers.
+ In [3]:planet = "Earth"
+        diameter = 12742
+ In [4]:print(f"The diameter of {planet} is {diameter}   
+        kilometers.")
+        The diameter of Earth is 12742 kilometers.
+       3. In this nest dictionary grab the word "hello"
+ In [5]:d = {'k1':[1,2,3,{'tricky':['oh','man','inception', 
+        {'target':[1,2,3,'hello']}]}]}
+ In [6]:new_d1 =d['k1'][3]
+        new_d2 =new_d1['tricky'][3]
+        new_d2['target'][3]
+ Out[6]:'hello'
+       4. Numpy
+ In [7]: import numpy as np
+        4.1 Create an array of 10 zeros?
+        4.2 Create an array of 10 fives?
+ In [8]:np.zeros(10)
+ Out[8]:array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+ In [9]:np.ones(10)*5
+ Out[9]:array([5., 5., 5., 5., 5., 5., 5., 5., 5., 5.])
+       5. Create an array of all the even integers from 20 to 35
+ In [10]:np.arange(20,35,2)
+         array([20, 22, 24, 26, 28, 30, 32, 34])
+       6. Create a 3x3 matrix with values ranging from 0 to 8
+ In [11] : np.arange(0,9).reshape(3,3)
+ out[11]:array([[0, 1, 2],
+               [3, 4, 5],
+               [6, 7, 8]])
+       7. Concatenate a and b
+           a = np.array([1, 2, 3]), b = np.array([4, 5, 6]) 
+ In [12]:a = np.array([1,2,3])
+         b = np.array([4,5,6])
+         np.concatenate((a,b), axis =0)
+ Out[12]:array([1, 2, 3, 4, 5, 6])
+         Pandas
+       8. Create a dataframe with 3 rows and 2 columns
+ In [1]:import pandas as pd
+ In [2]:data = [['Apple','100'],['Orange','80'],['Banana',       
+        '50']]
+        df = pd.DataFrame(data, columns=['Fruits', 'Price'])
+        df
+ Out[2]:   Fruits	Price
+	   0   Apple	 100
+	   1   Orange	  80
+	   2   Banana	  50
+          9. Generate the series of dates from 1st Jan, 2023 to 
+          10th Feb, 2023
+ In [3]:pd.date_range(start='01/01/2023', end='10/02/2023')
+ Out[3]:DatetimeIndex(['2023-01-01', '2023-01-02', '2023-01-03',  
+        '2023-01-04',
+               '2023-01-05', '2023-01-06', '2023-01-07', '2023- 
+        01-08',
+               '2023-01-09', '2023-01-10',
+               ...
+               '2023-09-23', '2023-09-24', '2023-09-25', '2023- 
+        09-26',
+               '2023-09-27', '2023-09-28', '2023-09-29', '2023-09-30',
+               '2023-10-01', '2023-10-02'],
+              dtype='datetime64[ns]', length=275, freq='D')
+        10. Create 2D list to DataFrame
+           lists = [[1, 'aaa', 22], [2, 'bbb', 25], [3, 'ccc', 24]]
+
+ In [4]:lists = [[1, 'aaa', 22], [2, 'bbb', 25], [3, 'ccc', 24]]
+ In [5]:df = pd.DataFrame(lists, columns=['Index', 'Tag', 'Values'])
+       df
+ Out[5]:    Index  Tag	   Values
+	 0  1	  aaa	   22
+	 1  2	  bbb	   25
+	 2  3	  ccc	   24
+
